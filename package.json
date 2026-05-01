@@ -40,6 +40,8 @@
   "private": false,
   "scripts": {
     "build": "rm -rf ./dist && bun tsc -p ./tsconfig.lib.json",
+    "minimaxSearch": "bun run ./src/cli/minimaxSearch.ts",
+    "minimaxUnderstandImage": "bun run ./src/cli/minimaxUnderstandImage.ts",
     "demo": "bun --env-file=.env run ./test/demoMinimaxCodingPlan.cli.ts",
     "test": "bun test --env-file .env",
     "test:w": "bun test --env-file .env --watch",
@@ -49,5 +51,9 @@
     "reset": "rm -rf ./node_modules"
   },
   "type": "module",
+  "bin": {
+    "minimaxSearch": "./src/cli/minimaxSearch.ts",
+    "minimaxUnderstandImage": "./src/cli/minimaxUnderstandImage.ts"
+  },
   "types": "./dist/index.d.ts"
 }
