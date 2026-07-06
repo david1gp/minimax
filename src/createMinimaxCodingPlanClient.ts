@@ -1,3 +1,4 @@
+import * as a from "valibot"
 import { defaultMinimaxApiHost } from "./defaultMinimaxApiHost.js"
 import { processImageSource } from "./processImageSource.js"
 import { minimaxSearchResultSchema, minimaxUnderstandImageResultSchema } from "./schema.js"
@@ -8,7 +9,6 @@ import type {
   MinimaxUnderstandImageProps,
   MinimaxUnderstandImageResult,
 } from "./types.js"
-import * as a from "valibot"
 
 export function createMinimaxCodingPlanClient(props: MinimaxClientProps) {
   const apiHost = props.apiHost || defaultMinimaxApiHost

@@ -51,7 +51,7 @@ if (filteredArgs.includes("--help") || filteredArgs.includes("-h")) {
   console.log("  MINIMAX_API_HOST   API host (optional)")
   console.log("")
   console.log("Example:")
-  console.log("  minimaxSearch --env-file=.env \"latest Convex news March 2026\"")
+  console.log('  minimaxSearch --env-file=.env "latest Convex news March 2026"')
   process.exit(0)
 }
 

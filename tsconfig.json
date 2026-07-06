@@ -29,15 +29,5 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src", "test"],
-  "exclude": [
-    ".github",
-    ".roo",
-    ".idea",
-    ".vscode",
-    "build",
-    "dist",
-    "docs",
-    "node_modules",
-    "ops"
-  ]
+  "exclude": [".github", ".roo", ".idea", ".vscode", "build", "dist", "docs", "node_modules", "ops"]
 }

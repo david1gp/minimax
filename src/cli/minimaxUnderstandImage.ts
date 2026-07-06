@@ -55,7 +55,7 @@ if (filteredArgs.includes("--help") || filteredArgs.includes("-h")) {
   console.log("  MINIMAX_API_HOST   API host (optional)")
   console.log("")
   console.log("Example:")
-  console.log("  minimaxUnderstandImage -e .env @image.png \"Describe this image\"")
+  console.log('  minimaxUnderstandImage -e .env @image.png "Describe this image"')
   process.exit(0)
 }
 
