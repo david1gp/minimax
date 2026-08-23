@@ -1,7 +1,13 @@
 #!/usr/bin/env bun
 import { createMinimaxCodingPlanClient } from "../index.js"
+import { minimaxVersion } from "../minimaxVersion.js"
 
 const args = Bun.argv.slice(2)
+
+if (args.includes("--version") || args.includes("-V")) {
+  console.log(`minimaxUnderstandImage ${minimaxVersion}`)
+  process.exit(0)
+}
 
 let envFile: string | undefined
 const filteredArgs = args.filter((arg) => {
@@ -44,6 +50,7 @@ if (filteredArgs.includes("--help") || filteredArgs.includes("-h")) {
   console.log("Usage: minimaxUnderstandImage [options] <imageSource> <prompt>")
   console.log("Options:")
   console.log("  --env-file <path>, -e <path>  Load env from file")
+  console.log("  --version, -V                Show the package version")
   console.log("  --help, -h                   Show this help")
   console.log("")
   console.log("Arguments:")
