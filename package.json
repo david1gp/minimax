@@ -46,6 +46,7 @@
     "demo": "bun --env-file=.env run ./test/demoMinimaxCodingPlan.cli.ts",
     "test": "bun test --env-file .env",
     "test:w": "bun test --env-file .env --watch",
+    "release": "bash ./ops/release.sh",
     "update": "bun update",
     "update:commit": "bun update && git add package.json && bun run tsc && git commit -m \"chore(deps): update dependencies\" && git push",
     "clean": "rm -rf ./dist",
@@ -56,6 +57,10 @@
   "bin": {
     "minimaxSearch": "./src/cli/minimaxSearch.ts",
     "minimaxUnderstandImage": "./src/cli/minimaxUnderstandImage.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "types": "./dist/index.d.ts"
 }
