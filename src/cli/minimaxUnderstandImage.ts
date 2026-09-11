@@ -1,11 +1,14 @@
 #!/usr/bin/env bun
 import { createMinimaxCodingPlanClient } from "../index.js"
 import { minimaxVersion } from "../minimaxVersion.js"
+import { minimaxVersionMetadataRender } from "../minimaxVersionMetadataRender.js"
 
 const args = Bun.argv.slice(2)
+const verboseVersion = args.includes("--verbose") && (args.includes("--version") || args.includes("-V"))
 
 if (args.includes("--version") || args.includes("-V")) {
-  console.log(`minimaxUnderstandImage ${minimaxVersion}`)
+  if (verboseVersion) process.stdout.write(minimaxVersionMetadataRender("minimaxUnderstandImage"))
+  else console.log(`minimaxUnderstandImage ${minimaxVersion}`)
   process.exit(0)
 }
 
@@ -51,6 +54,7 @@ if (filteredArgs.includes("--help") || filteredArgs.includes("-h")) {
   console.log("Options:")
   console.log("  --env-file <path>, -e <path>  Load env from file")
   console.log("  --version, -V                Show the package version")
+  console.log("  --verbose                    Include package and runtime metadata with the version")
   console.log("  --help, -h                   Show this help")
   console.log("")
   console.log("Arguments:")
